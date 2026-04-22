@@ -1,0 +1,55 @@
+{
+  "accounts": [
+    {
+      "id": "salon_ayano_diary",
+      "handle": "@salon_ayano_diary",
+      "owner_name": "佐野さん",
+      "business_name": "（サロン名確認中）",
+      "director": "担当ディレクター名",
+      "operator": "担当運用者名",
+      "platform": "threads",
+      "location": "大阪",
+      "business_type": "個人美容サロン",
+      "goal": "面談獲得 → 溶剤（GBE）販売",
+      "kpi_label": "月間インスタDM問い合わせ数",
+      "kpi_target": 5,
+      "target_audience": "個人サロン経営者・開業予定者",
+      "content_pillars": [
+        "リピート・売上安定ノウハウ",
+        "サロン経営者あるある・共感",
+        "インサイト祭り（ターゲット集客）",
+        "事例・変化の報告"
+      ],
+      "weekly_post_count": 21,
+      "post_times": ["08:00", "10:00", "20:00"],
+      "followers_start": 39,
+      "started_at": "2026-04-22",
+      "status": "active",
+      "csv_dir": "/Users/yuya/poc_threads_scraping_ver3/output",
+      "scrape_username": "salon_ayano_diary"
+    },
+    {
+      "id": "account_002",
+      "handle": "@account_002",
+      "owner_name": "オーナー名",
+      "business_name": "ビジネス名",
+      "director": "担当ディレクター名",
+      "operator": "担当運用者名",
+      "platform": "threads",
+      "location": "東京",
+      "business_type": "業種を入力",
+      "goal": "目標を入力",
+      "kpi_label": "KPI指標名",
+      "kpi_target": 0,
+      "target_audience": "ターゲット層を入力",
+      "content_pillars": ["柱①", "柱②", "柱③", "柱④"],
+      "weekly_post_count": 21,
+      "post_times": ["08:00", "12:00", "20:00"],
+      "followers_start": 0,
+      "started_at": "2026-01-01",
+      "status": "active",
+      "csv_dir": "/Users/yuya/poc_threads_scraping_ver3/output",
+      "scrape_username": "account_002"
+    }
+  ]
+}
