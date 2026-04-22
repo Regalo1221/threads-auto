@@ -1,0 +1,8 @@
+# クライアントURL一覧
+# 1行1URL、# で始まる行はコメント
+# ホームページ、Instagram、Twitter(X)、TikTok など参考URLを記入
+
+# 例:
+# https://salon-example.com
+# https://www.instagram.com/salon_example
+# https://twitter.com/salon_example

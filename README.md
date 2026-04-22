@@ -7,15 +7,24 @@ Threadsアカウントのスクレイピング・分析・レポート生成・�
 ## 全体フロー
 
 ```
-① accounts.json にアカウントを追加（チームメンバーの作業）
+① accounts.json にアカウントを追加
       ↓
-② 毎日 daily-scrape.sh が自動実行（投稿データをCSVに蓄積）
+② input/[id]/hearing.md を記入（初回ヒアリング内容）
+   input/[id]/urls.txt  を記入（HP・SNS URL）
       ↓
-③ generate_reports.js でドキュメントを生成
+③ node onboard.js --account [id]
+      ↓
+  ┌────────────────────────────────────────────┐
+  │  スクレイピング → データ分析 → 課題検出    │
+  │  → ヒアリングシートDOCX（追加質問付き）   │
+  │  → 戦略書ひな形DOCX                        │
+  └────────────────────────────────────────────┘
+      ↓
+④ 毎日 daily-scrape.sh が自動実行（数値を継続蓄積）
+      ↓
+⑤ 週次・月次レポートを generate_reports.js で生成
       ↓
   ┌──────────────────────────────────┐
-  │ hearing   → ヒアリングシートDOCX │
-  │ strategy  → 戦略書DOCX           │
   │ weekly    → 週次レポートDOCX     │
   │ monthly   → 月次レポートDOCX     │
   └──────────────────────────────────┘
@@ -42,11 +51,15 @@ make setup
 
 ---
 
-## アカウントの追加方法（チームメンバー向け）
+## 新規アカウントのオンボーディング
+
+### 概要
+
+アカウントIDと初回ヒアリング情報を用意するだけで、スクレイピング・分析・ヒアリングシート・戦略書を自動生成します。
 
 ### 手順
 
-**1. `accounts.json` を編集する**
+**Step 1. `accounts.json` に最低限の情報を追加する**
 
 リポジトリルートの `accounts.json` を開き、`accounts` 配列に新しいエントリを追加します。
 
@@ -77,35 +90,62 @@ make setup
 ```
 
 > **`id` はシステム全体でユニークにしてください（出力フォルダ名になります）。**
+> 最低限必要なフィールド: `id`, `handle`, `scrape_username`, `csv_dir`
+> 残りは hearing.md から自動補完されます。
 
-**2. 動作確認**
+**Step 2. ヒアリングシートテンプレートを記入する**
 
 ```bash
-node -e "const a=require('./accounts.json').accounts; console.log(a.map(x=>x.id+' '+x.handle).join('\n'));"
+# テンプレートをコピー
+cp templates/hearing-input.md input/[id]/hearing.md
+
+# HP・SNS URLを記入（任意）
+cp templates/urls.txt input/[id]/urls.txt
 ```
 
-**3. ヒアリングシートを生成する**
+`input/[id]/hearing.md` を開いて、初回MTGで聞いた内容を記入します。
+
+**Step 3. オンボーディングを実行する**
 
 ```bash
-NODE_PATH=/opt/homebrew/lib/node_modules node generate_reports.js --type hearing --account [アカウントID]
+node onboard.js --account [id]
 ```
 
-生成先: `output/[アカウントID]/hearing/hearing_YYYYMMDD.docx`
+これだけで以下が自動実行されます：
+- hearing.md の内容を accounts.json に反映
+- Threads スクレイピング（全件取得）
+- データ分析・課題検出
+- ヒアリングシート DOCX 生成（データから追加質問を自動生成）
+- 戦略書ひな形 DOCX 生成
 
-**4. PRを作成してレビューを依頼する**
+出力先: `output/[id]/`
+
+**Step 4. PRを作成してレビューを依頼する**
 
 ```bash
-git add accounts.json
+git add accounts.json input/[id]/
 git commit -m "add account: @アカウント名"
 git push origin [ブランチ名]
 ```
 
 ---
 
-## ドキュメント生成コマンド
+## コマンドリファレンス
+
+### オンボーディング（新規アカウント）
 
 ```bash
-# ヒアリングシート（課題ベースの質問を自動生成）
+# 通常実行（スクレイピング → 分析 → DOCX生成）
+node onboard.js --account [id]
+
+# スクレイピングをスキップ（再生成のみ）
+node onboard.js --account [id] --skip-scrape
+```
+
+### 継続レポート生成
+
+```bash
+# ヒアリングシート
 NODE_PATH=/opt/homebrew/lib/node_modules node generate_reports.js --type hearing
 
 # 戦略書
