@@ -21,7 +21,11 @@
         "事例・変化の報告"
       ],
       "weekly_post_count": 21,
-      "post_times": ["08:00", "10:00", "20:00"],
+      "post_times": [
+        "08:00",
+        "10:00",
+        "20:00"
+      ],
       "followers_start": 39,
       "started_at": "2026-04-22",
       "status": "active",
@@ -29,27 +33,73 @@
       "scrape_username": "salon_ayano_diary"
     },
     {
-      "id": "account_002",
-      "handle": "@account_002",
-      "owner_name": "オーナー名",
-      "business_name": "ビジネス名",
-      "director": "担当ディレクター名",
-      "operator": "担当運用者名",
+      "id": "aka0408ne",
+      "handle": "@aka0408ne",
+      "owner_name": "",
+      "business_name": "退職アドバイザー",
+      "director": "",
+      "operator": "",
       "platform": "threads",
-      "location": "東京",
-      "business_type": "業種を入力",
-      "goal": "目標を入力",
-      "kpi_label": "KPI指標名",
-      "kpi_target": 0,
-      "target_audience": "ターゲット層を入力",
-      "content_pillars": ["柱①", "柱②", "柱③", "柱④"],
+      "location": "",
+      "business_type": "退職給付金事業",
+      "goal": "公式LINE誘導 → 商談獲得 → 成約",
+      "kpi_label": "月間商談数",
+      "kpi_target": "20",
+      "target_audience": "退職を考えている人・仕事を辞めたい人",
+      "content_pillars": [
+        "仕事辞めたい系共感・短文",
+        "お金・物価高への共感",
+        "退職給付金の認知・インサイト",
+        "プロフ誘導・LINE誘導"
+      ],
       "weekly_post_count": 21,
-      "post_times": ["08:00", "12:00", "20:00"],
+      "post_times": [
+        "08:00",
+        "12:00",
+        "20:00"
+      ],
       "followers_start": 0,
-      "started_at": "2026-01-01",
+      "started_at": "2026-04-14",
       "status": "active",
       "csv_dir": "/Users/yuya/poc_threads_scraping_ver3/output",
-      "scrape_username": "account_002"
+      "scrape_username": "aka0408ne",
+      "lp_url": "https://www.taisyoku-advisor.net/l/testlp0101/",
+      "benchmark_accounts": [
+        "https://www.threads.com/@sakura_tensyoku",
+        "https://www.threads.com/@mugi_mental_"
+      ],
+      "client_urls": [
+        "https://www.taisyoku-advisor.net/l/testlp0101/",
+        "https://www.threads.com/@sakura_tensyoku",
+        "https://www.threads.com/@mugi_mental_"
+      ]
+    },
+    {
+      "id": "account_placeholder",
+      "handle": "@account_placeholder",
+      "owner_name": "",
+      "business_name": "",
+      "director": "",
+      "operator": "",
+      "platform": "threads",
+      "location": "",
+      "business_type": "",
+      "goal": "",
+      "kpi_label": "",
+      "kpi_target": 0,
+      "target_audience": "",
+      "content_pillars": [],
+      "weekly_post_count": 21,
+      "post_times": [
+        "08:00",
+        "12:00",
+        "20:00"
+      ],
+      "followers_start": 0,
+      "started_at": "2026-01-01",
+      "status": "inactive",
+      "csv_dir": "/Users/yuya/poc_threads_scraping_ver3/output",
+      "scrape_username": ""
     }
   ]
 }
