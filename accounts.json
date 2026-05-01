@@ -43,8 +43,13 @@
       "location": "",
       "business_type": "退職給付金事業",
       "goal": "公式LINE誘導 → 商談獲得 → 成約",
-      "kpi_label": "月間商談数",
-      "kpi_target": "20",
+      "kpi_label": "公式LINE登録数",
+      "kpi_target": 5,
+      "kpi_targets_monthly": {
+        "2026-05": 5,
+        "2026-06": 10,
+        "2026-07": 15
+      },
       "target_audience": "退職を考えている人・仕事を辞めたい人",
       "content_pillars": [
         "仕事辞めたい系共感・短文",
