@@ -30,7 +30,25 @@
       "started_at": "2026-04-22",
       "status": "active",
       "csv_dir": "/Users/yuya/poc_threads_scraping_ver3/output",
-      "scrape_username": "salon_ayano_diary"
+      "scrape_username": "salon_ayano_diary",
+      "strategy_version": "v2.0（2026年4月22日 MTG確定）",
+      "strategy_doc": "salon_ayano_strategy_v2.docx",
+      "mtg_policy": {
+        "date": "2026-04-22",
+        "summary": "4/22 MTGにて運用方針を以下のとおり確定。salon_ayano_strategy_v2に基づき発信を実施。",
+        "issues_and_diff": [
+          "競合と似た投稿が多いため、テキストの画像化などフォーマットで差別化を図る",
+          "内容を完全に変えるのではなく、情報の「見せ方」を工夫する",
+          "プロフィールを「誰でも言える内容」から「期待感を持たせる内容」へ刷新"
+        ],
+        "policy": "現状のアカウントを継続しつつ、情報の濃度（経営・集客・売上UPなどのTips）を上げていく",
+        "alert": "次の1ヶ月で数値に変化が見られない場合は、運用の停止も視野に入れる",
+        "todos": [
+          "プロフィール文章の変更",
+          "画像投稿の開始",
+          "経営面Tipsの小出し発信"
+        ]
+      }
     },
     {
       "id": "aka0408ne",
